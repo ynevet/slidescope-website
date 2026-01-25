@@ -98,6 +98,78 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Contact form handling
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            formStatus.className = 'form-status';
+            formStatus.style.display = 'none';
+            
+            try {
+                // Submit to Formspree
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success - Hide the form and show thank you message
+                    const userEmail = formData.get('email');
+                    const userName = formData.get('name');
+                    
+                    formStatus.className = 'form-status success';
+                    formStatus.innerHTML = `
+                        <strong>✓ Thank You for Your Download Request!</strong><br><br>
+                        Hi <strong>${userName}</strong>, we've received your request!<br><br>
+                        We'll send the SlideScope download link to <strong>${userEmail}</strong> within the next few minutes.<br><br>
+                        Please check your inbox (and spam folder) for an email from us.<br><br>
+                        <small>If you don't receive the email within 10 minutes, please contact us at support@slidescope.com</small>
+                    `;
+                    
+                    // Hide the form after successful submission
+                    contactForm.style.display = 'none';
+                    
+                    // Scroll to show the success message
+                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    // Error from server
+                    const data = await response.json();
+                    throw new Error(data.error || 'Something went wrong');
+                }
+            } catch (error) {
+                // Network or other error
+                formStatus.className = 'form-status error';
+                formStatus.innerHTML = `
+                    <strong>✗ Error</strong><br>
+                    Oops! There was a problem submitting your request. Please try again or contact us directly at <strong>support@slidescope.com</strong>
+                `;
+                console.error('Form submission error:', error);
+                
+                // Scroll to show the error message
+                formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } finally {
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            }
+        });
+    }
+    
     // Console welcome message
     console.log('%cSlideScope Website', 'color: #2563eb; font-size: 24px; font-weight: bold;');
     console.log('%cOpen source microscopy image viewer', 'color: #06b6d4; font-size: 14px;');

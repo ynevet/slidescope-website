@@ -157,7 +157,7 @@
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#demo">Demo</a>
-                <a href="#download">Download</a>
+                <a href="#contact">Get App</a>
             </div>
         </div>
     </nav>
@@ -173,7 +173,7 @@
                     SlideScope is a professional microscopy image viewer software designed for researchers, scientists, and lab professionals. Easily open and analyze Zeiss CZI, Nikon ND2, and Aperio SVS files on Windows and macOS. Navigate Z-stacks, zoom high-resolution images, and view comprehensive metadata with an intuitive, powerful interface.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#download" class="btn btn-primary">Start Free Trial</a>
+                    <a href="#contact" class="btn btn-primary">Request Download Link</a>
                     <a href="#demo" class="btn btn-secondary">Watch Demo</a>
                 </div>
                 <div class="platform-badges">
@@ -413,7 +413,7 @@
                         <li>✓ Email support</li>
                         <li>✓ Free updates for 1 year</li>
                     </ul>
-                    <a href="#download" class="btn btn-primary btn-large">Start 2-Day Free Trial</a>
+                    <a href="#contact" class="btn btn-primary btn-large">Request Download Link</a>
                     <p class="trial-note">2 days free, no credit card required</p>
                 </div>
             </div>
@@ -426,22 +426,95 @@
     <!-- Download Section -->
     <section id="download" class="download-section">
         <div class="container">
-            <h2 class="section-title">Download SlideScope</h2>
-            <p class="section-subtitle">Start your 2-day free trial today. Full feature access, no credit card required.</p>
+            <h2 class="section-title">Get SlideScope</h2>
+            <p class="section-subtitle">Request your download link below. We'll send it to your email instantly.</p>
             <div class="download-grid">
                 <div class="download-card">
                     <h3>Windows</h3>
                     <p class="version">Version 0.1.0</p>
                     <p class="requirements">Requires Windows 10 or later</p>
-                    <a href="#" class="btn btn-primary btn-large">Download for Windows</a>
+                    <a href="#contact" class="btn btn-primary btn-large">Request Windows Download</a>
                     <p class="download-note">2-day free trial • Then $49/year</p>
                 </div>
                 <div class="download-card">
                     <h3>macOS</h3>
                     <p class="version">Version 0.1.0</p>
                     <p class="requirements">Requires macOS 10.14 or later</p>
-                    <a href="#" class="btn btn-primary btn-large">Download for macOS</a>
+                    <a href="#contact" class="btn btn-primary btn-large">Request macOS Download</a>
                     <p class="download-note">2-day free trial • Then $49/year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Request Download Link</h2>
+            <p class="section-subtitle">Fill out the form below and we'll send you a download link for your preferred platform</p>
+            
+            <div class="contact-form-wrapper">
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/xkornepw" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="platform">Platform <span class="required">*</span></label>
+                        <select id="platform" name="platform" required>
+                            <option value="">Select your platform</option>
+                            <option value="Windows">Windows 10/11</option>
+                            <option value="macOS">macOS 10.14+</option>
+                            <option value="Both">Both Windows & macOS</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="institution">Institution / Organization (Optional)</label>
+                        <input type="text" id="institution" name="institution" placeholder="University, Lab, or Company name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Comments (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Let us know if you have any questions or special requirements..."></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" value="yes">
+                            <span>Send me updates about SlideScope features and releases</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large">Send Download Link</button>
+                    
+                    <div id="form-status" class="form-status"></div>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="contact-info-card">
+                        <h3>Quick Support</h3>
+                        <p>Need help? Have questions about SlideScope?</p>
+                        <p class="contact-detail">Response time: Within 24 hours</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h3>What happens next?</h3>
+                        <ul class="contact-steps">
+                            <li>We'll email you the download link for your platform</li>
+                            <li>Install SlideScope and start your 2-day free trial</li>
+                            <li>No credit card required for the trial</li>
+                            <li>Full access to all features during trial</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
