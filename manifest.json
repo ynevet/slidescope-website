@@ -1,0 +1,22 @@
+{
+  "name": "SlideScope - Microscopy Image Viewer",
+  "short_name": "SlideScope",
+  "description": "Professional microscopy image viewer for CZI, ND2, and SVS files. View Z-stacks, zoom high-resolution images, and analyze microscopy data. 14-day free trial.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eff6ff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["science", "education", "medical", "productivity"],
+  "screenshots": [],
+  "lang": "en-US",
+  "dir": "ltr",
+  "orientation": "any"
+}
