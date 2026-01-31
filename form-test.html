@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Messages Test - SlideScope</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 2px dashed #ccc;
+            border-radius: 12px;
+        }
+        .test-button {
+            margin: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Message Test Page</h1>
+    <p>Click the buttons below to see how success and error messages will appear:</p>
+    
+    <div class="test-section">
+        <h2>Success Message Preview (Form Closes After Success)</h2>
+        <button class="btn btn-primary test-button" onclick="showSuccess()">Show Success Message</button>
+        <form id="demo-form" style="margin-top: 1rem; padding: 1.5rem; border: 2px solid #ddd; border-radius: 8px;">
+            <p><strong>Demo Form</strong> (will be hidden after success)</p>
+            <input type="text" placeholder="Name" style="width: 100%; padding: 0.5rem; margin: 0.5rem 0;">
+            <input type="email" placeholder="Email" style="width: 100%; padding: 0.5rem; margin: 0.5rem 0;">
+        </form>
+        <div id="success-preview" class="form-status success" style="display: none; margin-top: 1rem;">
+            <strong>✓ Thank You for Your Download Request!</strong><br><br>
+            Hi <strong>John Doe</strong>, we've received your request!<br><br>
+            We'll send the SlideScope download link to <strong>john.doe@example.com</strong> within the next few minutes.<br><br>
+            Please check your inbox (and spam folder) for an email from us.<br><br>
+            <small>If you don't receive the email within 10 minutes, please contact us at support@slidescope.com</small>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Error Message Preview</h2>
+        <button class="btn btn-primary test-button" onclick="showError()">Show Error Message</button>
+        <div id="error-preview" class="form-status error" style="display: none; margin-top: 1rem;">
+            <strong>✗ Error</strong><br>
+            Oops! There was a problem submitting your request. Please try again or contact us directly at <strong>support@slidescope.com</strong>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Button States</h2>
+        <button class="btn btn-primary" id="normal-btn">Normal Button</button>
+        <button class="btn btn-primary" disabled>Sending...</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test the Actual Form</h2>
+        <p>Go back to <a href="index.html#contact">index.html</a> to test the real form with your Formspree integration.</p>
+    </div>
+
+    <script>
+        function showSuccess() {
+            const preview = document.getElementById('success-preview');
+            const form = document.getElementById('demo-form');
+            preview.style.display = 'none';
+            form.style.display = 'block';
+            setTimeout(() => {
+                form.style.display = 'none';
+                preview.style.display = 'block';
+                preview.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+        
+        function showError() {
+            const preview = document.getElementById('error-preview');
+            preview.style.display = 'none';
+            setTimeout(() => {
+                preview.style.display = 'block';
+            }, 10);
+        }
+    </script>
+</body>
+</html>

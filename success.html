@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - SlideScope</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .success-container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 40px;
+            text-align: center;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        
+        .success-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .success-message {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .activation-steps {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .activation-steps h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .activation-steps ol {
+            font-size: 16px;
+            line-height: 2;
+            color: #495057;
+        }
+        
+        .activation-steps li {
+            margin-bottom: 10px;
+        }
+        
+        .license-key-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .license-key-box strong {
+            color: #856404;
+            font-size: 18px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">✓</div>
+        <h1 class="success-title">Payment Successful!</h1>
+        <p class="success-message">
+            Thank you for purchasing SlideScope! Your license key has been sent to your email address.
+        </p>
+        
+        <div class="license-key-box">
+            <strong>📧 Check your inbox for your license key</strong>
+            <p style="margin-top: 10px; color: #856404;">
+                The email should arrive within a few minutes. Please check your spam folder if you don't see it.
+            </p>
+        </div>
+        
+        <div class="activation-steps">
+            <h3>🔑 How to Activate Your License</h3>
+            <ol>
+                <li>Check your email for the license key (format: SLS-XXXX-XXXX-XXXX-XXXX)</li>
+                <li>Open SlideScope on your computer</li>
+                <li>Go to <strong>Help → License & Activation</strong></li>
+                <li>Enter your license key and click <strong>Activate</strong></li>
+                <li>Start using SlideScope without restrictions!</li>
+            </ol>
+        </div>
+        
+        <div class="cta-buttons">
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+            <a href="mailto:support@slidescope.com" class="btn btn-secondary">Contact Support</a>
+        </div>
+        
+        <p style="margin-top: 40px; color: #868e96; font-size: 14px;">
+            Need help? Email us at <a href="mailto:support@slidescope.com">support@slidescope.com</a>
+        </p>
+    </div>
+</body>
+</html>
