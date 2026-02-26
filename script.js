@@ -98,77 +98,71 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Contact form handling
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.textContent;
-            
-            // Disable button and show loading state
+    // Formspree forms: submit via AJAX, then hide form and show thank you (no redirect)
+    document.addEventListener('submit', async function(e) {
+        const form = e.target;
+        if (!form || !form.action || !form.action.includes('formspree.io')) return;
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton ? submitButton.textContent : '';
+        const statusEl = form.nextElementSibling?.classList?.contains('form-status') ? form.nextElementSibling : null;
+
+        if (submitButton) {
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
-            formStatus.className = 'form-status';
-            formStatus.style.display = 'none';
-            
-            try {
-                // Submit to Formspree
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
+        }
+        if (statusEl) {
+            statusEl.className = 'form-status';
+            statusEl.style.display = 'none';
+        }
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                form.style.display = 'none';
+                if (statusEl) {
+                    if (form.id === 'contact-form') {
+                        const userEmail = formData.get('email');
+                        const userName = formData.get('name');
+                        statusEl.className = 'form-status success';
+                        statusEl.innerHTML = `
+                            <strong>✓ Thank you!</strong><br><br>
+                            Hi <strong>${userName}</strong>, we've received your request. We'll send the SlideScope download link to <strong>${userEmail}</strong> shortly. Please check your inbox (and spam folder).<br><br>
+                            <small>If you don't receive it within 10 minutes, contact support@slidescope.science</small>
+                        `;
+                    } else {
+                        statusEl.className = 'form-status success';
+                        statusEl.innerHTML = '<strong>✓ Thank you!</strong><br><br>We\'ve received your request and will be in touch shortly.';
                     }
-                });
-                
-                if (response.ok) {
-                    // Success - Hide the form and show thank you message
-                    const userEmail = formData.get('email');
-                    const userName = formData.get('name');
-                    
-                    formStatus.className = 'form-status success';
-                    formStatus.innerHTML = `
-                        <strong>✓ Thank You for Your Download Request!</strong><br><br>
-                        Hi <strong>${userName}</strong>, we've received your request!<br><br>
-                        We'll send the SlideScope download link to <strong>${userEmail}</strong> within the next few minutes.<br><br>
-                        Please check your inbox (and spam folder) for an email from us.<br><br>
-                        <small>If you don't receive the email within 10 minutes, please contact us at support@slidescope.science</small>
-                    `;
-                    
-                    // Hide the form after successful submission
-                    contactForm.style.display = 'none';
-                    
-                    // Scroll to show the success message
-                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                    // Error from server
-                    const data = await response.json();
-                    throw new Error(data.error || 'Something went wrong');
+                    statusEl.style.display = 'block';
+                    statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
-            } catch (error) {
-                // Network or other error
-                formStatus.className = 'form-status error';
-                formStatus.innerHTML = `
-                    <strong>✗ Error</strong><br>
-                    Oops! There was a problem submitting your request. Please try again or contact us directly at <strong>support@slidescope.science</strong>
-                `;
-                console.error('Form submission error:', error);
-                
-                // Scroll to show the error message
-                formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            } finally {
-                // Re-enable button
+            } else {
+                const data = await response.json().catch(() => ({}));
+                throw new Error(data.error || 'Something went wrong');
+            }
+        } catch (error) {
+            if (statusEl) {
+                statusEl.className = 'form-status error';
+                statusEl.innerHTML = '<strong>✗ Error</strong><br>Something went wrong. Please try again or contact us at <strong>support@slidescope.science</strong>';
+                statusEl.style.display = 'block';
+                statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            console.error('Form submission error:', error);
+        } finally {
+            if (submitButton) {
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
             }
-        });
-    }
+        }
+    });
     
     // Console welcome message
     console.log('%cSlideScope Website', 'color: #2563eb; font-size: 24px; font-weight: bold;');
