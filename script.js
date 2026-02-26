@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         Hi <strong>${userName}</strong>, we've received your request!<br><br>
                         We'll send the SlideScope download link to <strong>${userEmail}</strong> within the next few minutes.<br><br>
                         Please check your inbox (and spam folder) for an email from us.<br><br>
-                        <small>If you don't receive the email within 10 minutes, please contact us at support@slidescope.com</small>
+                        <small>If you don't receive the email within 10 minutes, please contact us at support@slidescope.science</small>
                     `;
                     
                     // Hide the form after successful submission
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 formStatus.className = 'form-status error';
                 formStatus.innerHTML = `
                     <strong>✗ Error</strong><br>
-                    Oops! There was a problem submitting your request. Please try again or contact us directly at <strong>support@slidescope.com</strong>
+                    Oops! There was a problem submitting your request. Please try again or contact us directly at <strong>support@slidescope.science</strong>
                 `;
                 console.error('Form submission error:', error);
                 

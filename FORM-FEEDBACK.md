@@ -61,7 +61,7 @@ the next few minutes.
 Please check your inbox (and spam folder) for an email from us.
 
 If you don't receive the email within 10 minutes, please contact us at 
-support@slidescope.com
+support@slidescope.science
 ```
 
 **Note**: The form is completely hidden after successful submission to prevent duplicate requests.
@@ -70,7 +70,7 @@ support@slidescope.com
 ```
 ✗ Error
 Oops! There was a problem submitting your request. Please try again or 
-contact us directly at support@slidescope.com
+contact us directly at support@slidescope.science
 ```
 
 ## 🧪 Testing
