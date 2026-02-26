@@ -417,10 +417,10 @@
                         <li>✓ Email support</li>
                         <li>✓ Free updates for 1 year</li>
                     </ul>
-                    <div class="purchase-form">
-                        <input type="email" id="purchase-email" class="email-input" placeholder="Enter your email" required>
-                        <button id="purchase-button" class="btn btn-primary btn-large">Purchase License - $49/year</button>
-                    </div>
+                    <form class="purchase-form" action="https://formspree.io/f/xzdaogaq" method="POST">
+                        <input type="email" id="purchase-email" name="email" class="email-input" placeholder="Enter your email" required>
+                        <button type="submit" id="purchase-button" class="btn btn-primary btn-large">Purchase License - $49/year</button>
+                    </form>
                     <p class="trial-note">Or download and try free for 2 days, no credit card required</p>
                     <a href="#download" class="btn-link">Download Free Trial →</a>
                 </div>

@@ -70,19 +70,27 @@ function handlePurchaseClick() {
 }
 
 /**
- * Initialize purchase form
+ * Initialize purchase form (Stripe checkout). Skip if form uses Formspree.
  */
 function initPurchaseForm() {
   const purchaseButton = document.getElementById('purchase-button');
+  const form = purchaseButton?.closest('form');
+  if (form?.action?.includes('formspree.io')) {
+    return; // Formspree form submits normally
+  }
   if (purchaseButton) {
-    purchaseButton.addEventListener('click', handlePurchaseClick);
+    purchaseButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      handlePurchaseClick();
+    });
   }
 
   // Allow Enter key to submit
   const emailInput = document.getElementById('purchase-email');
-  if (emailInput) {
+  if (emailInput && !form?.action?.includes('formspree.io')) {
     emailInput.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
+        e.preventDefault();
         handlePurchaseClick();
       }
     });
