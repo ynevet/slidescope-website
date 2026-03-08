@@ -137,6 +137,18 @@ document.addEventListener('DOMContentLoaded', function() {
                             Hi <strong>${userName}</strong>, we've received your request. We'll send the SlideScope download link to <strong>${userEmail}</strong> shortly. Please check your inbox (and spam folder).<br><br>
                             <small>If you don't receive it within 10 minutes, contact support@slidescope.science</small>
                         `;
+
+                        // Also fire to our API to generate & email the download token
+                        fetch('https://slidescope-api.railway.app/api/request-download', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                name: userName,
+                                email: userEmail,
+                                platform: formData.get('platform'),
+                            }),
+                        }).catch(err => console.error('Download request error:', err));
+
                     } else {
                         statusEl.className = 'form-status success';
                         statusEl.innerHTML = '<strong>✓ Thank you!</strong><br><br>We\'ve received your request and will be in touch shortly.';
