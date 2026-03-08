@@ -48,7 +48,7 @@ async function purchaseLicense(email) {
     const button = document.getElementById('purchase-button');
     if (button) {
       button.disabled = false;
-      button.textContent = 'Purchase License - $69/year';
+      button.textContent = 'Purchase License - $59/year';
     }
   }
 }
