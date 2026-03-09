@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         `;
 
                         // Also fire to our API to generate & email the download token
-                        fetch('https://slidescope-api.railway.app/api/request-download', {
+                        fetch('https://api-production-ac03.up.railway.app/api/request-download', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({
