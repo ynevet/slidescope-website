@@ -160,6 +160,7 @@
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
+                <a href="#sandbox">Sandbox</a>
                 <a href="#demo">Demo</a>
                 <a href="#contact">Get App</a>
             </div>
@@ -417,13 +418,36 @@
                         <li>✓ Email support</li>
                         <li>✓ Free updates for 1 year</li>
                     </ul>
-                    <div id="paypal-container-QHZE45H5JQ6GS"></div>
+                    <a href="#sandbox" class="btn btn-primary btn-large">Open Sandbox Checkout</a>
                     <p class="trial-note">Or download and try free for 2 days, no credit card required</p>
                     <a href="#download" class="btn-link">Download Free Trial →</a>
                 </div>
             </div>
             <div class="pricing-footer">
                 <p>All prices in USD. Annual subscription renews automatically. Cancel anytime with 30-day money-back guarantee.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sandbox Checkout Section -->
+    <section id="sandbox" class="sandbox-section">
+        <div class="container">
+            <h2 class="section-title">Sandbox Checkout</h2>
+            <p class="section-subtitle">Use this PayPal sandbox area to test the SlideScope annual license checkout flow before going live.</p>
+            <div class="sandbox-card">
+                <div class="sandbox-copy">
+                    <span class="sandbox-label">Testing Only</span>
+                    <h3>PayPal Hosted Button</h3>
+                    <p>This checkout uses your PayPal sandbox configuration. Complete payments here only with sandbox buyer accounts and test payment methods.</p>
+                    <ul class="sandbox-points">
+                        <li>Annual license price: $59 USD</li>
+                        <li>Sandbox only, not for live customer payments</li>
+                        <li>Use it to validate the embedded checkout experience</li>
+                    </ul>
+                </div>
+                <div class="sandbox-checkout">
+                    <div id="paypal-container-UG93PFVCUH9US"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -545,12 +569,12 @@
 
     <script src="script.js"></script>
     <script
-      src="https://www.paypal.com/sdk/js?client-id=BAAxqtf1J9rrB1dffpaKuGHqiBx3GEUDxGNQgJMRZZxxCPT2lzO03UImmC32e0EbsDQ6yB8B080ttD_S-s&components=hosted-buttons&disable-funding=venmo&currency=USD">
+      src="https://www.paypal.com/sdk/js?client-id=BAA1HY3l87eXlZ9UGtSGrC_fevI-8IuqH0U6ugzsMyl3zkNgbjz2lM2r_Q4ntNYZz3p8HwSrMpWNGwhjCo&components=hosted-buttons&disable-funding=venmo&currency=USD">
     </script>
     <script>
       paypal.HostedButtons({
-        hostedButtonId: "QHZE45H5JQ6GS",
-      }).render("#paypal-container-QHZE45H5JQ6GS");
+        hostedButtonId: "UG93PFVCUH9US",
+      }).render("#paypal-container-UG93PFVCUH9US");
     </script>
 </body>
 </html>

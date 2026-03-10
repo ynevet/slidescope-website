@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe all feature cards, format cards, and download cards
-    const animatedElements = document.querySelectorAll('.feature-card, .format-card, .download-card');
+    const animatedElements = document.querySelectorAll('.feature-card, .format-card, .download-card, .sandbox-card');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
