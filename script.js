@@ -2,6 +2,15 @@
 
 // Smooth scroll behavior for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    const sandboxSection = document.getElementById('sandbox');
+    const sandboxUnlockToken = 'UG93PFVCUH9US';
+    const sandboxUnlocked = new URLSearchParams(window.location.search).get('unlock') === sandboxUnlockToken;
+
+    if (sandboxSection && sandboxUnlocked) {
+        sandboxSection.classList.remove('sandbox-section-hidden');
+        sandboxSection.removeAttribute('aria-hidden');
+    }
+
     // Add scroll behavior to all anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     

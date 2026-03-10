@@ -672,6 +672,10 @@ video {
         linear-gradient(180deg, #f8fbff 0%, #eef7ff 100%);
 }
 
+.sandbox-section-hidden {
+    display: none;
+}
+
 .sandbox-card {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
