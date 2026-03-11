@@ -750,6 +750,14 @@ video {
     min-height: 180px;
 }
 
+.pricing-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
 /* ===================================
    Download Section
    =================================== */
@@ -1193,6 +1201,10 @@ video {
     .sandbox-card {
         grid-template-columns: 1fr;
         padding: 2rem;
+    }
+
+    .pricing-actions {
+        width: 100%;
     }
 
     .sandbox-copy h3 {
