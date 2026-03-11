@@ -746,7 +746,7 @@ video {
     box-shadow: var(--shadow-md);
 }
 
-.sandbox-checkout #paypal-container-UG93PFVCUH9US {
+.sandbox-checkout [id^="paypal-container-"] {
     min-height: 180px;
 }
 
