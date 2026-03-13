@@ -458,7 +458,7 @@
     <section id="download" class="download-section">
         <div class="container">
             <h2 class="section-title">Get SlideScope</h2>
-            <p class="section-subtitle">Request your download link below. We'll send it to your email instantly.</p>
+            <p class="section-subtitle">Request your download link below. We'll send it to your email instantly, along with quick steps for opening SlideScope if Windows or macOS shows a security warning.</p>
             <div class="download-grid">
                 <div class="download-card">
                     <h3>Windows</h3>
@@ -477,7 +477,53 @@
                     <p class="requirements">Requires macOS 10.14 or later</p>
                     <a href="#contact" class="btn btn-primary btn-large">Request macOS Download</a>
                     <p class="download-note">2-day free trial • Then $99/year</p>
+                    <details class="install-note">
+                        <summary>macOS says the app cannot be opened?</summary>
+                        <p>If macOS says SlideScope is from an unidentified developer, open Finder, go to Applications, Control-click <strong>SlideScope</strong>, choose <strong>Open</strong>, then click <strong>Open</strong> again. If needed, go to <strong>System Settings → Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>.</p>
+                    </details>
                 </div>
+            </div>
+            <div class="install-banner">
+                <strong>Why this warning appears:</strong> SlideScope is not yet code-signed by Apple or Microsoft, so first-launch warnings are expected right now. The app is safe to open, and detailed steps are below.
+                <a href="#install-help" class="install-banner-link">View install help</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="install-help" class="install-help-section">
+        <div class="container">
+            <h2 class="section-title">Install Help</h2>
+            <p class="section-subtitle">If your computer blocks SlideScope on first launch, use the steps below. This usually only needs to be done once.</p>
+
+            <div class="install-help-grid">
+                <article class="install-help-card">
+                    <span class="install-help-label">Windows 10/11</span>
+                    <h3>Bypass SmartScreen</h3>
+                    <ol class="install-help-steps">
+                        <li>Download and open the SlideScope installer.</li>
+                        <li>If Windows shows <strong>"Windows protected your PC"</strong>, click <strong>More info</strong>.</li>
+                        <li>Click <strong>Run anyway</strong>.</li>
+                        <li>Finish the install and launch SlideScope normally after that.</li>
+                    </ol>
+                    <p class="install-help-note">Microsoft shows this warning because the app is not code-signed yet, so it appears as an unknown publisher at first.</p>
+                </article>
+
+                <article class="install-help-card">
+                    <span class="install-help-label">macOS</span>
+                    <h3>Open an unidentified developer app</h3>
+                    <ol class="install-help-steps">
+                        <li>Open the DMG and drag SlideScope into Applications.</li>
+                        <li>In Finder, open the <strong>Applications</strong> folder.</li>
+                        <li>Control-click <strong>SlideScope</strong> and choose <strong>Open</strong>.</li>
+                        <li>Click <strong>Open</strong> again in the Apple prompt.</li>
+                    </ol>
+                    <p class="install-help-note">If macOS still blocks the app, open <strong>System Settings → Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>.</p>
+                </article>
+            </div>
+
+            <div class="install-support-card">
+                <h3>Still blocked?</h3>
+                <p>Email <a href="mailto:support@slidescope.science">support@slidescope.science</a> and we will help you get SlideScope running.</p>
             </div>
         </div>
     </section>
@@ -544,6 +590,7 @@
                         <h3>What happens next?</h3>
                         <ul class="contact-steps">
                             <li>We'll email you the download link for your platform</li>
+                            <li>We'll include quick Windows and macOS install-help steps in the email</li>
                             <li>Install SlideScope and start your 2-day free trial</li>
                             <li>No credit card required for the trial</li>
                             <li>Full access to all features during trial</li>

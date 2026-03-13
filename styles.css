@@ -853,6 +853,86 @@ video {
     line-height: 1.5;
 }
 
+.install-banner {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid #f97316;
+    background: #fff7ed;
+    border-radius: 0 12px 12px 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.install-banner-link {
+    margin-left: 0.5rem;
+    color: #c2410c;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.install-banner-link:hover {
+    text-decoration: underline;
+}
+
+.install-help-section {
+    padding: var(--section-padding);
+    background: linear-gradient(180deg, #fffaf3 0%, #ffffff 100%);
+}
+
+.install-help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.install-help-card {
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+}
+
+.install-help-label {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    background: #dbeafe;
+    color: var(--primary-blue);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.install-help-card h3 {
+    margin-bottom: 1rem;
+}
+
+.install-help-steps {
+    padding-left: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.install-help-note {
+    margin-top: 1rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+.install-support-card {
+    max-width: 720px;
+    margin: 2rem auto 0;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 16px;
+    background: #eff6ff;
+    box-shadow: var(--shadow-md);
+}
+
 .source-code {
     text-align: center;
     margin-top: 3rem;

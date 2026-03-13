@@ -135,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         statusEl.innerHTML = `
                             <strong>✓ Thank you!</strong><br><br>
                             Hi <strong>${userName}</strong>, we've received your request. We'll send the SlideScope download link to <strong>${userEmail}</strong> shortly. Please check your inbox (and spam folder).<br><br>
+                            <small>The email also includes Windows/macOS steps in case your computer shows a first-launch security warning. You can also read them now in the <a href="#install-help">install help guide</a>.</small><br><br>
                             <small>If you don't receive it within 10 minutes, contact support@slidescope.science</small>
                         `;
 
